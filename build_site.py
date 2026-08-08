@@ -13,7 +13,7 @@ import urllib.request
 # ========== 配置 ==========
 ROOT_PAGE_ID = "22ee5bf2-490f-42c7-9853-b16568c0a674"  # 三下数学
 BASE_URL = "https://api.flowus.cn"
-OUT_DIR = "site"
+OUT_DIR = "docs"
 TOKEN = os.environ.get("FLOWUS_TOKEN", "")
 
 LINK_RE = re.compile(r"\[([^\]]+)\]\((https://flowus\.cn/([0-9a-f-]+))\)")
