@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>屁股大法之植树和剪绳子</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<nav><a class="home" href="../index.html">← 返回首页</a></nav>
+<article id="content"></article>
+<script src="../assets/marked.min.js"></script>
+<script>
+const md = "## 屁股大法之植树和剪绳子\n\n> 植树问题和剪绳子问题是很多二年级小朋友犯迷糊的题型，但是考试非常喜欢考。因此，我自创了一个头加屁股大法来专门解决这个问题。\n\n### 最常见的题型是有头有屁股型\n\n```plain_text\n1. ⚪-⚪-⚪-⚪-⚪-⚪-⚪-⚪-⚪     点：7个    线：6段\n2. ⚪-⚪-⚪-⚪-⚪-⚪-⚪-⚪-       点：6个    线：6段\n3. -⚪-⚪-⚪-⚪-⚪-⚪-⚪-         点：5个    线：6段\n```\n\n第一种类型，两个端点都种树了，那么我们就说，它有头有屁股，因为头和屁股各有一个端点包住线段，因此，线段个数永远比点的个数要少。在这样的情况下，点个数＝段数➕1。\n\n第二种情况，只有头，没有屁股，因为少了一个屁股，也就是少了一个点，他刚好就是一个点带着一根线这样不断连续，那么刚好点的数量等于线段数量。这样的情况考的不多。\n\n第三种情况，没头没屁股。这个时候，由于少了两个点包住全部线段，所以点一定比线段少，而这也就是剪绳子题目的模型，剪几刀实则是几个点分几段。在此情况下，线段数量＝点数➕1\n\n我们只要看看有没有屁股和头，就能很容易的判断是哪种情况了。这样的题目还很喜欢告知点数，问线段，或者告知线段问有一个点数。点有可能是树，也有可能是人，树变成人，相距几米排队，就变成排队问题。但不管如何变化，只要确定有没有头有没有屁股，谁做点，谁当线段，就能快速列式算出来。";
+document.getElementById('content').innerHTML = marked.parse(md);
+</script>
+</body>
+</html>
