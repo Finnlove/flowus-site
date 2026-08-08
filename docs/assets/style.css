@@ -1,7 +1,7 @@
 /* Notion 风格 */
 :root { --text: #37352f; --muted: #787774; --bg: #ffffff; --code-bg: #f7f6f3; --border: #e9e9e7; }
 * { box-sizing: border-box; }
-body { margin: 0; background: linear-gradient(120deg, #eef2ee, #e3ecf2, #f4f1e8, #e8efea, #eef2ee); background-size: 300% 300%; animation: soft-flow 28s ease-in-out infinite; color: var(--text); font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.7; }
+body { margin: 0; background: linear-gradient(120deg, #f3ecd9, #cfdfcb, #c3d7e8, #c2ddd5, #d3d9e4); background-size: 140% 140%; animation: soft-flow 15s ease-in-out infinite; color: var(--text); font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.7; }
 nav { max-width: 760px; margin: 0 auto; padding: 24px 20px 0; }
 nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
 nav a:hover { color: var(--text); }
@@ -29,9 +29,9 @@ li { margin: 0.25em 0; }
 .empty { color: var(--muted); font-style: italic; }
 /* 柔和流动渐变背景 */
 @keyframes soft-flow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% { background-position: 0% 30%; }
+  50% { background-position: 100% 70%; }
+  100% { background-position: 0% 30%; }
 }
 @media (prefers-reduced-motion: reduce) {
   body { animation: none; }
