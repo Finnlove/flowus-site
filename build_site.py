@@ -41,11 +41,11 @@ document.getElementById('content').innerHTML = marked.parse(md);
 CSS = """/* Notion 风格 */
 :root { --text: #37352f; --muted: #787774; --bg: #ffffff; --code-bg: #f7f6f3; --border: #e9e9e7; }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--text); font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.7; }
+body { margin: 0; background: linear-gradient(120deg, #eef2ee, #e3ecf2, #f4f1e8, #e8efea, #eef2ee); background-size: 300% 300%; animation: soft-flow 28s ease-in-out infinite; color: var(--text); font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.7; }
 nav { max-width: 760px; margin: 0 auto; padding: 24px 20px 0; }
 nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
 nav a:hover { color: var(--text); }
-article { max-width: 760px; margin: 0 auto; padding: 8px 20px 80px; font-size: 16px; }
+article { max-width: 760px; margin: 0 auto; padding: 24px 20px 80px; background: rgba(255, 255, 255, 0.88); border-radius: 12px; font-size: 16px; }
 h1, h2, h3, h4 { font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; margin-top: 1.4em; }
 h1 { font-size: 1.9em; margin-top: 0.5em; }
 h2 { font-size: 1.4em; padding-bottom: 0.3em; border-bottom: 1px solid var(--border); }
@@ -67,6 +67,15 @@ li { margin: 0.25em 0; }
 .card:hover { background: var(--code-bg); text-decoration: none; }
 .card .date { color: var(--muted); font-size: 13px; float: right; }
 .empty { color: var(--muted); font-style: italic; }
+/* 柔和流动渐变背景 */
+@keyframes soft-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+}
 """
 
 
