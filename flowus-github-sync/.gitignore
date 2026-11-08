@@ -1,0 +1,5 @@
+﻿# 本机专属，不要提交
+sync.log
+sync.err.log
+config.json
+*.proxy
