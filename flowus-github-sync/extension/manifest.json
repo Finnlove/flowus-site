@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "FlowUs 工具栏",
+  "version": "1.2.0",
+  "description": "FlowUs 页面右上角「同步到 GitHub」按钮（点开可切换目标仓库）+ 待办勾选礼花",
+  "permissions": [],
+  "host_permissions": ["http://127.0.0.1:7357/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://flowus.cn/*", "https://*.flowus.cn/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    },
+    {
+      "matches": ["https://flowus.cn/*", "https://*.flowus.cn/*"],
+      "js": ["confetti.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_title": "同步当前 FlowUs 页到 GitHub"
+  }
+}
