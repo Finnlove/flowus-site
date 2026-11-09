@@ -1,0 +1,303 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="400" viewBox="0 0 1600 400">
+  <defs>
+    <radialGradient id="sungrad" cx="40%" cy="36%" r="66%">
+      <stop offset="0" stop-color="#ffe3b0"/>
+      <stop offset="0.5" stop-color="#f5b862"/>
+      <stop offset="1" stop-color="#d98a33"/>
+    </radialGradient>
+    <radialGradient id="sunwash" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#f7bd68" stop-opacity=".55"/>
+      <stop offset="0.38" stop-color="#eaa94e" stop-opacity=".20"/>
+      <stop offset="1" stop-color="#eaa94e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shade" x1="0.12" y1="0.05" x2="0.9" y2="0.98">
+      <stop offset="0.30" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.72" stop-color="#241a12" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#241a12" stop-opacity=".34"/>
+    </linearGradient>
+    <radialGradient id="vign" cx="50%" cy="48%" r="74%">
+      <stop offset="0.5" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#2a1d10" stop-opacity=".13"/>
+    </radialGradient>
+    <radialGradient id="mfade">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="0.60" stop-color="#000"/>
+      <stop offset="1" stop-color="#fff"/>
+    </radialGradient>
+    <mask id="orbitmask" maskUnits="userSpaceOnUse" x="0" y="0" width="1600" height="400">
+      <rect width="1600" height="400" fill="url(#mfadeX)"/>
+      <circle cx="296" cy="198" r="118" fill="url(#mfade)"/>
+    </mask>
+    <linearGradient id="mfadeX" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="0.10" stop-color="#3a3a3a"/>
+      <stop offset="0.19" stop-color="#ffffff"/>
+    </linearGradient>
+    <filter id="wobble" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014 0.021" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip11"><circle r="11"/></clipPath>
+    <clipPath id="clip14"><circle r="14"/></clipPath>
+    <clipPath id="clip16"><circle r="16"/></clipPath>
+    <clipPath id="clip13"><circle r="13"/></clipPath>
+    <clipPath id="clip30"><circle r="30"/></clipPath>
+    <clipPath id="clip26"><circle r="26"/></clipPath>
+    <clipPath id="clip19"><circle r="19"/></clipPath>
+    <clipPath id="clip18"><circle r="18"/></clipPath>
+    <path id="m0" d="M409 183.6A128 30.7 0 0 1 183 212.4A128 30.7 0 0 1 409 183.6"/>
+    <path id="m1" d="M380.2 156.6A192 46.1 0 0 1 211.8 239.4A192 46.1 0 0 1 380.2 156.6"/>
+    <path id="m2" d="M538.9 221.6A262 62.9 0 0 1 53.1 174.4A262 62.9 0 0 1 538.9 221.6"/>
+    <path id="m3" d="M213.7 118.8A340 81.6 0 0 1 378.3 277.2A340 81.6 0 0 1 213.7 118.8"/>
+    <path id="m4" d="M727.8 185.2A436 92 0 0 1 -135.8 210.8A436 92 0 0 1 727.8 185.2"/>
+    <path id="m5" d="M586.4 276A548 92 0 0 1 5.6 120A548 92 0 0 1 586.4 276"/>
+    <path id="m6" d="M842.9 143.9A676 92 0 0 1 -250.9 252.1A676 92 0 0 1 842.9 143.9"/>
+    <path id="m7" d="M1117.5 188.4A826 92 0 0 1 -525.5 207.6A826 92 0 0 1 1117.5 188.4"/>
+  </defs>
+
+  <style>
+.paper{fill:#f7f0e2}
+.ink{stroke:#33291f;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.orbit{fill:none;stroke:#33291f;stroke-width:2.1;opacity:.40;stroke-dasharray:2 10;stroke-linecap:round;animation:dashflow 70s linear infinite}
+.orbit.o1,.orbit.o3,.orbit.o5,.orbit.o7{stroke-dasharray:20 13;opacity:.30;animation-duration:110s}
+.orbit.o6,.orbit.o7{opacity:.16}
+.orbit-ghost{fill:none;stroke:#33291f;stroke-width:1.3;opacity:.10;stroke-dasharray:26 18}
+.tremor{fill:none;stroke:#33291f;stroke-width:1.7;opacity:.24;stroke-dasharray:15 9}
+.body{stroke:#33291f;stroke-width:2.6}
+.mercury{fill:#a2948a}.venus{fill:#e6bd7e}.earth{fill:#6b9080}.mars{fill:#c1663f}
+.jupiter{fill:#cfa26c}.saturn{fill:#e0c992}.uranus{fill:#83aeb1}.neptune{fill:#6880a8}
+.hatch{fill:none;stroke:#33291f;stroke-width:2;opacity:.28}
+.ringband{fill:none;stroke:#e3cd97;stroke-width:7.5;opacity:.95}
+.ringfront{fill:none;stroke:#e3cd97;stroke-width:7.5}
+.sun{fill:url(#sungrad);stroke:#8a5720;stroke-width:3}
+.sunink{fill:none;stroke:#8a5720;stroke-width:1.5;opacity:.45;stroke-dasharray:18 12}
+.ray{stroke:#d18f36;stroke-linecap:round;opacity:.8}
+.star{fill:#33291f;animation:twinkle 6s ease-in-out infinite}
+.cstdot{fill:#33291f;opacity:.62}
+.cstline{stroke:#33291f;stroke-width:1.1;opacity:.24;stroke-dasharray:4 6}
+.title{fill:#33291f;opacity:.8;font-family:Georgia,'Times New Roman',serif;font-size:19px;letter-spacing:7px}
+.sub{fill:#33291f;opacity:.42;font-family:Georgia,serif;font-size:10px;letter-spacing:3.6px}
+.rule{stroke:#33291f;opacity:.3;stroke-width:1.4}
+@keyframes dashflow{to{stroke-dashoffset:-520}}
+@keyframes twinkle{0%,100%{opacity:.1}50%{opacity:.8}}
+@keyframes glowslow{0%,100%{opacity:.42}50%{opacity:.72}}
+.sunwash{animation:glowslow 9s ease-in-out infinite}
+@media (prefers-color-scheme: dark){
+  .paper{fill:#0c1117}
+  .ink{stroke:#e2d9c6}
+  .orbit{stroke:#e2d9c6;opacity:.26}
+  .orbit.o1,.orbit.o3,.orbit.o5,.orbit.o7{opacity:.18}
+  .orbit.o6,.orbit.o7{opacity:.12}
+  .orbit-ghost{stroke:#e2d9c6;opacity:.07}
+  .tremor{stroke:#e2d9c6;opacity:.2}
+  .body{stroke:#e2d9c6}
+  .mercury{fill:#b5a89b}.venus{fill:#f0c987}.earth{fill:#7ba794}.mars{fill:#d4784f}
+  .jupiter{fill:#dcb27a}.saturn{fill:#eed9a2}.uranus{fill:#98c3c6}.neptune{fill:#7d95c0}
+  .hatch{stroke:#e2d9c6;opacity:.22}
+  .ringband{stroke:#eed9a2}
+  .ringfront{stroke:#eed9a2}
+  .sun{stroke:#9c6626}
+  .sunink{stroke:#9c6626}
+  .ray{stroke:#e8b061;opacity:.72}
+  .star{fill:#e2d9c6}
+  .cstdot{fill:#e2d9c6;opacity:.45}
+  .cstline{stroke:#e2d9c6;opacity:.14}
+  .title{fill:#e2d9c6;opacity:.75}
+  .sub{fill:#e2d9c6;opacity:.38}
+  .rule{stroke:#e2d9c6;opacity:.25}
+}</style>
+
+  <rect class="paper" width="1600" height="400"/>
+  <rect filter="url(#grain)" width="1600" height="400" opacity=".07"/>
+  <circle class="sunwash" cx="296" cy="198" r="248" fill="url(#sunwash)"/>
+
+  <g class="stars"><circle class="star" cx="1525" cy="375.9" r="1.8" style="animation-duration:4.3s;animation-delay:-1.6s"/><circle class="star" cx="579.8" cy="324" r="1.2" style="animation-duration:5.2s;animation-delay:-5.5s"/><circle class="star" cx="1076.1" cy="198.6" r="0.9" style="animation-duration:7.2s;animation-delay:-4.5s"/><circle class="star" cx="1411.8" cy="176.6" r="2.1" style="animation-duration:6.0s;animation-delay:-6.2s"/><circle class="star" cx="941.5" cy="59.5" r="1.6" style="animation-duration:7.7s;animation-delay:-7.3s"/><circle class="star" cx="1283.3" cy="129.4" r="1.8" style="animation-duration:8.0s;animation-delay:-7.5s"/><circle class="star" cx="1280.6" cy="274.6" r="1.6" style="animation-duration:8.4s;animation-delay:-0.1s"/><circle class="star" cx="1526.2" cy="175.2" r="1.9" style="animation-duration:5.0s;animation-delay:-3.4s"/><circle class="star" cx="706.3" cy="198.2" r="1.7" style="animation-duration:5.3s;animation-delay:-5.4s"/><circle class="star" cx="768.8" cy="144.8" r="2" style="animation-duration:8.1s;animation-delay:-7.3s"/><circle class="star" cx="96.2" cy="346.8" r="1.4" style="animation-duration:8.7s;animation-delay:-3.7s"/><circle class="star" cx="530.3" cy="339.4" r="2" style="animation-duration:7.0s;animation-delay:-2.9s"/><circle class="star" cx="639.1" cy="325.4" r="1.9" style="animation-duration:4.0s;animation-delay:-0.6s"/><circle class="star" cx="1137.2" cy="288.2" r="1.5" style="animation-duration:4.6s;animation-delay:-6.8s"/><circle class="star" cx="645.7" cy="150.5" r="2.5" style="animation-duration:6.6s;animation-delay:-7.6s"/><circle class="star" cx="1259" cy="258.6" r="2.2" style="animation-duration:5.3s;animation-delay:-7.4s"/><circle class="star" cx="1167.9" cy="152" r="1.7" style="animation-duration:4.8s;animation-delay:-0.2s"/><circle class="star" cx="627.4" cy="225.9" r="1.4" style="animation-duration:8.4s;animation-delay:-0.0s"/><circle class="star" cx="988.8" cy="90" r="1.6" style="animation-duration:4.9s;animation-delay:-6.1s"/><circle class="star" cx="1126.9" cy="228.4" r="0.9" style="animation-duration:7.9s;animation-delay:-4.8s"/><circle class="star" cx="1341.4" cy="66.5" r="2.2" style="animation-duration:8.6s;animation-delay:-7.4s"/><circle class="star" cx="897.9" cy="96" r="1.6" style="animation-duration:5.5s;animation-delay:-4.3s"/><circle class="star" cx="916.5" cy="351" r="1.2" style="animation-duration:6.8s;animation-delay:-3.5s"/><circle class="star" cx="276.8" cy="373.9" r="2.3" style="animation-duration:5.8s;animation-delay:-5.6s"/><circle class="star" cx="625.2" cy="35" r="1.1" style="animation-duration:5.3s;animation-delay:-3.9s"/><circle class="star" cx="1366.9" cy="340.7" r="2.4" style="animation-duration:8.4s;animation-delay:-6.2s"/><circle class="star" cx="903.3" cy="46.2" r="2.4" style="animation-duration:5.1s;animation-delay:-7.2s"/><circle class="star" cx="272.6" cy="61.4" r="2.1" style="animation-duration:5.2s;animation-delay:-5.1s"/><circle class="star" cx="1351" cy="109.4" r="1.6" style="animation-duration:4.9s;animation-delay:-0.9s"/><circle class="star" cx="447" cy="60.5" r="1.9" style="animation-duration:4.3s;animation-delay:-0.4s"/><circle class="star" cx="1106.1" cy="328.1" r="1.7" style="animation-duration:7.0s;animation-delay:-3.3s"/><circle class="star" cx="1394.7" cy="124.1" r="1.9" style="animation-duration:6.3s;animation-delay:-5.9s"/><circle class="star" cx="804.5" cy="327" r="2" style="animation-duration:5.7s;animation-delay:-6.1s"/><circle class="star" cx="1122.5" cy="199.2" r="1.8" style="animation-duration:8.5s;animation-delay:-6.4s"/><circle class="star" cx="915.8" cy="312.4" r="1.3" style="animation-duration:5.2s;animation-delay:-1.4s"/><circle class="star" cx="497.3" cy="351.6" r="1" style="animation-duration:5.5s;animation-delay:-4.2s"/><circle class="star" cx="739.3" cy="200.4" r="1.2" style="animation-duration:6.3s;animation-delay:-0.0s"/><circle class="star" cx="298.6" cy="317.7" r="1.2" style="animation-duration:5.9s;animation-delay:-7.8s"/><circle class="star" cx="1357.1" cy="271.3" r="2" style="animation-duration:7.3s;animation-delay:-5.9s"/><circle class="star" cx="1428.1" cy="164.2" r="1.2" style="animation-duration:8.9s;animation-delay:-0.1s"/><circle class="star" cx="1103.9" cy="122.7" r="1.4" style="animation-duration:7.9s;animation-delay:-5.6s"/><circle class="star" cx="216" cy="27.7" r="1.9" style="animation-duration:4.7s;animation-delay:-6.9s"/><circle class="star" cx="1374.4" cy="164.5" r="1.5" style="animation-duration:5.0s;animation-delay:-3.7s"/><circle class="star" cx="898.6" cy="267.8" r="2.4" style="animation-duration:7.4s;animation-delay:-5.6s"/><circle class="star" cx="1321" cy="361.7" r="0.9" style="animation-duration:6.2s;animation-delay:-5.2s"/><circle class="star" cx="1228.4" cy="214.1" r="1" style="animation-duration:4.8s;animation-delay:-7.9s"/><circle class="star" cx="1157.4" cy="319.2" r="1.1" style="animation-duration:4.4s;animation-delay:-3.3s"/><circle class="star" cx="1198.8" cy="59.5" r="1.9" style="animation-duration:5.7s;animation-delay:-3.3s"/></g>
+
+  <g class="orbits" mask="url(#orbitmask)" filter="url(#wobble)">
+    <path class="orbit o0" d="M409 183.6A128 30.7 0 0 1 183 212.4A128 30.7 0 0 1 409 183.6"/>
+    <path class="orbit-ghost o0" d="M409 183.6A128 30.7 0 0 1 183 212.4A128 30.7 0 0 1 409 183.6" transform="translate(0.8 0.8)"/>
+    <path class="orbit o1" d="M380.2 156.6A192 46.1 0 0 1 211.8 239.4A192 46.1 0 0 1 380.2 156.6"/>
+    <path class="orbit-ghost o1" d="M380.2 156.6A192 46.1 0 0 1 211.8 239.4A192 46.1 0 0 1 380.2 156.6" transform="translate(0.8 0.8)"/>
+    <path class="orbit o2" d="M538.9 221.6A262 62.9 0 0 1 53.1 174.4A262 62.9 0 0 1 538.9 221.6"/>
+    <path class="orbit-ghost o2" d="M538.9 221.6A262 62.9 0 0 1 53.1 174.4A262 62.9 0 0 1 538.9 221.6" transform="translate(0.8 0.8)"/>
+    <path class="orbit o3" d="M213.7 118.8A340 81.6 0 0 1 378.3 277.2A340 81.6 0 0 1 213.7 118.8"/>
+    <path class="orbit-ghost o3" d="M213.7 118.8A340 81.6 0 0 1 378.3 277.2A340 81.6 0 0 1 213.7 118.8" transform="translate(0.8 0.8)"/>
+    <path class="orbit o4" d="M727.8 185.2A436 92 0 0 1 -135.8 210.8A436 92 0 0 1 727.8 185.2"/>
+    <path class="orbit-ghost o4" d="M727.8 185.2A436 92 0 0 1 -135.8 210.8A436 92 0 0 1 727.8 185.2" transform="translate(0.8 0.8)"/>
+    <path class="orbit o5" d="M586.4 276A548 92 0 0 1 5.6 120A548 92 0 0 1 586.4 276"/>
+    <path class="orbit-ghost o5" d="M586.4 276A548 92 0 0 1 5.6 120A548 92 0 0 1 586.4 276" transform="translate(0.8 0.8)"/>
+    <path class="orbit o6" d="M842.9 143.9A676 92 0 0 1 -250.9 252.1A676 92 0 0 1 842.9 143.9"/>
+    <path class="orbit-ghost o6" d="M842.9 143.9A676 92 0 0 1 -250.9 252.1A676 92 0 0 1 842.9 143.9" transform="translate(0.8 0.8)"/>
+    <path class="orbit o7" d="M1117.5 188.4A826 92 0 0 1 -525.5 207.6A826 92 0 0 1 1117.5 188.4"/>
+    <path class="orbit-ghost o7" d="M1117.5 188.4A826 92 0 0 1 -525.5 207.6A826 92 0 0 1 1117.5 188.4" transform="translate(0.8 0.8)"/>
+  </g>
+
+  <g class="rays">
+      <path class="ray" stroke-width="3.6" d="M365.7 204.3L393.6 206.8"/>
+      <path class="ray" stroke-width="2.4" d="M358 230.5L372.2 237.9"/>
+      <path class="ray" stroke-width="3.6" d="M340.8 251.7L358.8 273.2"/>
+      <path class="ray" stroke-width="2.4" d="M316.9 264.8L321.6 280.1"/>
+      <path class="ray" stroke-width="3.6" d="M289.7 267.7L287.2 295.6"/>
+      <path class="ray" stroke-width="2.4" d="M263.5 260L256.1 274.2"/>
+      <path class="ray" stroke-width="3.6" d="M242.3 242.8L220.8 260.8"/>
+      <path class="ray" stroke-width="2.4" d="M229.2 218.9L213.9 223.6"/>
+      <path class="ray" stroke-width="3.6" d="M226.3 191.7L198.4 189.2"/>
+      <path class="ray" stroke-width="2.4" d="M234 165.5L219.8 158.1"/>
+      <path class="ray" stroke-width="3.6" d="M251.2 144.3L233.2 122.8"/>
+      <path class="ray" stroke-width="2.4" d="M275.1 131.2L270.4 115.9"/>
+      <path class="ray" stroke-width="3.6" d="M302.3 128.3L304.8 100.4"/>
+      <path class="ray" stroke-width="2.4" d="M328.5 136L335.9 121.8"/>
+      <path class="ray" stroke-width="3.6" d="M349.7 153.2L371.2 135.2"/>
+      <path class="ray" stroke-width="2.4" d="M362.8 177.1L378.1 172.4"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 296 198" to="360 296 198" dur="180s" repeatCount="indefinite"/>
+  </g>
+  <circle class="sun" cx="296" cy="198" r="58"/>
+  <circle cx="296" cy="198" r="58" fill="url(#shade)" opacity=".5"/>
+  <circle class="sunink" cx="296" cy="198" r="66"/>
+
+  <g class="planets">
+    <g class="planet-g">
+      <animateMotion dur="34s" repeatCount="indefinite" calcMode="linear"><mpath href="#m0"/></animateMotion>
+      <circle r="14.2" class="tremor"/>
+      
+      <circle r="11" class="body mercury"/>
+      <circle r="11" fill="url(#shade)"/>
+      <ellipse cx="-3.5" cy="-4.2" rx="3.7" ry="2.9" fill="#fff" opacity=".38" transform="rotate(-28 -3.5 -4.2)"/>
+      
+      
+      
+      <circle r="11" class="ink" stroke-width="2.6"/>
+      
+    </g>
+    <g class="planet-g">
+      <animateMotion dur="43s" repeatCount="indefinite" calcMode="linear"><mpath href="#m1"/></animateMotion>
+      <circle r="17.2" class="tremor"/>
+      
+      <circle r="14" class="body venus"/>
+      <circle r="14" fill="url(#shade)"/>
+      <ellipse cx="-4.5" cy="-5.3" rx="4.8" ry="3.6" fill="#fff" opacity=".38" transform="rotate(-28 -4.5 -5.3)"/>
+      
+      
+      
+      <circle r="14" class="ink" stroke-width="2.6"/>
+      
+    </g>
+    <g class="planet-g">
+      <animateMotion dur="52s" repeatCount="indefinite" calcMode="linear"><mpath href="#m2"/></animateMotion>
+      <circle r="19.2" class="tremor"/>
+      
+      <circle r="16" class="body earth"/>
+      <circle r="16" fill="url(#shade)"/>
+      <ellipse cx="-5.1" cy="-6.1" rx="5.4" ry="4.2" fill="#fff" opacity=".38" transform="rotate(-28 -5.1 -6.1)"/>
+      
+      <g clip-path="url(#clip16)">
+        <path d="M-8 -5.6q8.8 -4.5 11.5 2.6q1.9 6.7 -5.4 8q-8 0.6 -8.3 -5.4z" fill="#3c5d4b" opacity=".5"/>
+        <path d="M4.5 4.8q5.4 1.6 3.8 7.7q-4.8 -0.6 -4.8 -6.7z" fill="#3c5d4b" opacity=".38"/>
+      </g>
+      
+      <circle r="16" class="ink" stroke-width="2.6"/>
+      
+    </g>
+    <g class="planet-g">
+      <animateMotion dur="61s" repeatCount="indefinite" calcMode="linear"><mpath href="#m3"/></animateMotion>
+      <circle r="16.2" class="tremor"/>
+      
+      <circle r="13" class="body mars"/>
+      <circle r="13" fill="url(#shade)"/>
+      <ellipse cx="-4.2" cy="-4.9" rx="4.4" ry="3.4" fill="#fff" opacity=".38" transform="rotate(-28 -4.2 -4.9)"/>
+      
+      
+      
+      <circle r="13" class="ink" stroke-width="2.6"/>
+      
+    </g>
+    <g class="planet-g">
+      <animateMotion dur="70s" repeatCount="indefinite" calcMode="linear"><mpath href="#m4"/></animateMotion>
+      <circle r="33.2" class="tremor"/>
+      
+      <circle r="30" class="body jupiter"/>
+      <circle r="30" fill="url(#shade)"/>
+      <ellipse cx="-9.6" cy="-11.4" rx="10.2" ry="7.8" fill="#fff" opacity=".38" transform="rotate(-28 -9.6 -11.4)"/>
+      <g clip-path="url(#clip30)" class="hatchwrap">
+        <path d="M-30 -12.6Q0 -8.4 30 -12.6" class="hatch" stroke-width="3"/>
+        <path d="M-30 3Q0 6.6 30 3" class="hatch" stroke-width="3.4"/>
+        <path d="M-30 15.6Q0 18.6 30 15.6" class="hatch" stroke-width="2.6"/>
+        <ellipse cx="10.2" cy="6" rx="7.2" ry="4.2" fill="#a8503a" opacity=".55"/>
+      </g>
+      
+      <path d="M-27.6 12.6Q0 16 27.6 12.6" class="hatch"/>
+      <path d="M-27.6 18Q0 21.4 27.6 18" class="hatch"/>
+      <path d="M-27.6 23.4Q0 26.8 27.6 23.4" class="hatch"/>
+      <circle r="30" class="ink" stroke-width="3"/>
+      
+    </g>
+    <g class="planet-g">
+      <animateMotion dur="79s" repeatCount="indefinite" calcMode="linear"><mpath href="#m5"/></animateMotion>
+      <circle r="29.2" class="tremor"/>
+      <g transform="rotate(-15)">
+      <ellipse rx="48.1" ry="10.9" class="ringband"/>
+      <ellipse rx="48.1" ry="10.9" class="ink" stroke-width="1.6" opacity=".55"/>
+      <ellipse rx="36.9" ry="7.8" class="ink" stroke-width="1.2" opacity=".35"/>
+    </g>
+      <circle r="26" class="body saturn"/>
+      <circle r="26" fill="url(#shade)"/>
+      <ellipse cx="-8.3" cy="-9.9" rx="8.8" ry="6.8" fill="#fff" opacity=".38" transform="rotate(-28 -8.3 -9.9)"/>
+      
+      
+      <path d="M-23.9 10.9Q0 14.3 23.9 10.9" class="hatch"/>
+      <path d="M-23.9 15.6Q0 19 23.9 15.6" class="hatch"/>
+      <path d="M-23.9 20.3Q0 23.7 23.9 20.3" class="hatch"/>
+      <circle r="26" class="ink" stroke-width="3"/>
+      <g transform="rotate(-15)">
+      <path d="M-48.1 0A48.1 10.9 0 0 1 48.1 0" class="ringfront"/>
+      <path d="M-48.1 0A48.1 10.9 0 0 1 48.1 0" class="ink" stroke-width="2.4"/>
+      <path d="M-36.9 0A36.9 7.8 0 0 1 36.9 0" class="ink" stroke-width="1.2" opacity=".4"/>
+    </g>
+    </g>
+    <g class="planet-g">
+      <animateMotion dur="88s" repeatCount="indefinite" calcMode="linear"><mpath href="#m6"/></animateMotion>
+      <circle r="22.2" class="tremor"/>
+      
+      <circle r="19" class="body uranus"/>
+      <circle r="19" fill="url(#shade)"/>
+      <ellipse cx="-6.1" cy="-7.2" rx="6.5" ry="4.9" fill="#fff" opacity=".38" transform="rotate(-28 -6.1 -7.2)"/>
+      
+      
+      <path d="M-17.5 8Q0 11.4 17.5 8" class="hatch"/>
+      <path d="M-17.5 11.4Q0 14.8 17.5 11.4" class="hatch"/>
+      <path d="M-17.5 14.8Q0 18.2 17.5 14.8" class="hatch"/>
+      <circle r="19" class="ink" stroke-width="2.6"/>
+      
+    </g>
+    <g class="planet-g">
+      <animateMotion dur="97s" repeatCount="indefinite" calcMode="linear"><mpath href="#m7"/></animateMotion>
+      <circle r="21.2" class="tremor"/>
+      
+      <circle r="18" class="body neptune"/>
+      <circle r="18" fill="url(#shade)"/>
+      <ellipse cx="-5.8" cy="-6.8" rx="6.1" ry="4.7" fill="#fff" opacity=".38" transform="rotate(-28 -5.8 -6.8)"/>
+      
+      
+      <path d="M-16.6 7.6Q0 11 16.6 7.6" class="hatch"/>
+      <path d="M-16.6 10.8Q0 14.2 16.6 10.8" class="hatch"/>
+      <path d="M-16.6 14Q0 17.4 16.6 14" class="hatch"/>
+      <circle r="18" class="ink" stroke-width="2.6"/>
+      
+    </g>
+  </g>
+
+  <g class="cst">
+    <path class="cstline" d="M1150 86L1236 62"/><path class="cstline" d="M1236 62L1318 104"/><path class="cstline" d="M1318 104L1272 158"/><path class="cstline" d="M1272 158L1186 142"/><path class="cstline" d="M1186 142L1236 62"/>
+    <circle class="cstdot" cx="1150" cy="86" r="2.2"/><circle class="cstdot" cx="1236" cy="62" r="3"/><circle class="cstdot" cx="1318" cy="104" r="2.2"/><circle class="cstdot" cx="1272" cy="158" r="2.2"/><circle class="cstdot" cx="1186" cy="142" r="2.2"/>
+  </g>
+
+  <text class="title" x="1432" y="322" text-anchor="end">THE SOLAR SYSTEM</text>
+  <path class="rule" d="M1183 334Q1310 329 1432 335"/>
+  <text class="sub" x="1432" y="355" text-anchor="end">VIII PLANETS · HANDPRESSED INK</text>
+
+  <rect width="1600" height="400" fill="url(#vign)"/>
+</svg>
