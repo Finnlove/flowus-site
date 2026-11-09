@@ -13,26 +13,26 @@
 <g stroke="#ffffff" stroke-opacity=".06"><path d="M0 120 L1600 120"/><path d="M0 220 L1600 220"/><path d="M0 320 L1600 320"/></g>
 <path class="wave" d="M0 300 C220 160,420 360,620 240 S980 110,1180 230 S1460 340,1600 200" fill="none" stroke="#1d4ed8" stroke-opacity=".55" stroke-width="4" stroke-linecap="round"/>
 <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
-<text x="70" y="86" fill="#7dd3fc" font-size="24" letter-spacing="2">行政事务看板 · 2026-11</text>
-<text x="70" y="182" fill="#ffffff" font-size="68" font-weight="700">42</text>
-<text x="70" y="220" fill="#8fa3bf" font-size="20">在办事项</text>
-<text x="270" y="182" fill="#ffffff" font-size="68" font-weight="700">7</text>
-<text x="270" y="220" fill="#8fa3bf" font-size="20">本周到期</text>
-<text x="470" y="182" fill="#f87171" font-size="68" font-weight="700">3</text>
-<text x="470" y="220" fill="#8fa3bf" font-size="20">已逾期</text>
-<g transform="translate(900,72)">
+<text x="170" y="92" fill="#7dd3fc" font-size="24" letter-spacing="2">行政事务看板 · 2026-11</text>
+<text x="170" y="196" fill="#ffffff" font-size="64" font-weight="700">42</text>
+<text x="170" y="232" fill="#8fa3bf" font-size="20">在办事项</text>
+<text x="370" y="196" fill="#ffffff" font-size="64" font-weight="700">7</text>
+<text x="370" y="232" fill="#8fa3bf" font-size="20">本周到期</text>
+<text x="560" y="196" fill="#f87171" font-size="64" font-weight="700">3</text>
+<text x="560" y="232" fill="#8fa3bf" font-size="20">已逾期</text>
+<g transform="translate(900,86)">
 <text x="0" y="0" fill="#8fa3bf" font-size="18">整体完成度</text>
-<rect x="0" y="22" width="600" height="22" rx="11" fill="#1e293b"/>
-<rect x="0" y="22" width="414" height="22" rx="11" fill="url(#bar)">
-<animate attributeName="width" values="300;414;360;414" dur="8s" repeatCount="indefinite"/>
+<text x="540" y="0" fill="#e2e8f0" font-size="18" text-anchor="end">69%</text>
+<rect x="0" y="22" width="540" height="22" rx="11" fill="#1e293b"/>
+<rect x="0" y="22" width="372" height="22" rx="11" fill="url(#bar)">
+<animate attributeName="width" values="270;372;324;372" dur="8s" repeatCount="indefinite"/>
 </rect>
-<circle class="dot" cx="418" cy="33" r="9" fill="#a5f3fc"/>
-<text x="600" y="0" fill="#e2e8f0" font-size="18" text-anchor="end">69%</text>
+<circle class="dot" cx="376" cy="33" r="9" fill="#a5f3fc"/>
 </g>
-<g transform="translate(70,270)">
-<rect width="150" height="36" rx="18" fill="#16233a"/><text x="26" y="25" fill="#cbd5e1" font-size="18">待办 18</text>
-<rect x="170" width="150" height="36" rx="18" fill="#16233a"/><text x="196" y="25" fill="#cbd5e1" font-size="18">在办 16</text>
-<rect x="340" width="150" height="36" rx="18" fill="#16233a"/><text x="366" y="25" fill="#cbd5e1" font-size="18">完成 8</text>
+<g transform="translate(170,272)">
+<rect width="140" height="34" rx="17" fill="#16233a"/><text x="24" y="24" fill="#cbd5e1" font-size="17">待办 18</text>
+<rect x="156" width="140" height="34" rx="17" fill="#16233a"/><text x="180" y="24" fill="#cbd5e1" font-size="17">在办 16</text>
+<rect x="312" width="140" height="34" rx="17" fill="#16233a"/><text x="336" y="24" fill="#cbd5e1" font-size="17">完成 8</text>
 </g>
 </g>
 </svg>
