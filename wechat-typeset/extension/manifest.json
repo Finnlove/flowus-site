@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "智汇排版 · 公众号工具",
+  "version": "0.1.0",
+  "description": "公众号编辑器内一键排版 + 采集到 GitHub",
+  "permissions": [
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://mp.weixin.qq.com/*",
+    "http://127.0.0.1:7357/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mp.weixin.qq.com/*"
+      ],
+      "js": [
+        "presets.js",
+        "content.js"
+      ],
+      "css": [
+        "panel.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_title": "智汇排版：显示/隐藏工具条"
+  }
+}

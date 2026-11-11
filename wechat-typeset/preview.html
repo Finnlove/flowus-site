@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>公众号排版预设预览</title>
+<style>
+  * { box-sizing: border-box; }
+  html { margin: 0; padding: 0; }
+  body {
+    width: 375px; margin: 0; padding: 12px 12px 40px;
+    background: #fff; color: #222;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .ph { display:flex; align-items:center; gap:6px; margin:22px 0 6px; }
+  .ph b { font-size:10px; color:#999; font-weight:400; letter-spacing:.5px; }
+  .ph i { flex:1; height:1px; background:#eee; }
+  .demo { }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script src="extension/presets.js"></script>
+<script>
+const SAMPLES = {
+  paragraph: '这是正文示例。省二幼坚持以游戏为基本活动，把一日生活皆课程落到实处，让每个孩子在真实的体验中生长。',
+  h1: '一、让每个孩子被看见',
+  h2: '（一）从一日生活出发',
+  quote: '教育的本质，是让孩子在真实的生活里，长出自己的样子。',
+  blockquote: '引用：陈鹤琴先生曾言，大自然、大社会都是活教材。',
+  'image-caption': '孩子们在种植园里观察豆苗的生长',
+  divider: '',
+  'code-block': 'for i in range(3):\n    print("hello")',
+  'numbered-title': '把游戏还给孩子',
+  'color-highlight': '关键词高亮效果',
+  'info-card': '这是一张要点卡片，用来承载需要强调的一段说明文字，让重点从正文里跳出来。',
+  'data-block': '92.6%',
+  'decorative-separator': '',
+  'intro-block': '写在前面：这篇文章记录了我们这个学期在课程建设上的一点尝试与思考。',
+  'key-points': '',
+  'thought-block': '小结：先有真实的观察，才谈得上真正的支持。'
+};
+const app = document.getElementById('app');
+if (!window.PRESETS) {
+  app.innerHTML = '<p style="color:red">presets.js 未加载</p>';
+} else {
+  window.PRESETS.forEach((p, i) => {
+    const ph = document.createElement('div');
+    ph.className = 'ph';
+    ph.innerHTML = '<b>' + (i + 1) + ' · ' + p.label + ' / ' + p.id + '</b><i></i>';
+    app.appendChild(ph);
+    const box = document.createElement('div');
+    box.className = 'demo';
+    try {
+      box.innerHTML = p.build(SAMPLES[p.id] || '示例文字');
+    } catch (e) {
+      box.textContent = 'BUILD ERROR: ' + e.message;
+    }
+    app.appendChild(box);
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+/* 智汇排版 · panel.css
+ * 面板布局全部写在 content.js 的行内样式里（微信后台全局样式太脏，行内最稳）。
+ * 这里只做一件事：给面板内部元素兜底重置，防止被公众号后台的全局 CSS 污染。
+ */
+
+#zhp-panel,
+#zhp-panel * {
+  box-sizing: border-box !important;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+#zhp-panel button {
+  outline: none !important;
+  box-shadow: none !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+#zhp-panel button:active {
+  transform: scale(0.98);
+}
+
+#zhp-panel div {
+  margin: 0;
+}
