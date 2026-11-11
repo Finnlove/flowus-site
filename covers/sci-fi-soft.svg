@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="400" viewBox="0 0 1600 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8f4ff"/>
+      <stop offset="35%" stop-color="#e8f0ff"/>
+      <stop offset="70%" stop-color="#f0e8ff"/>
+      <stop offset="100%" stop-color="#fff5f8"/>
+    </linearGradient>
+    <radialGradient id="blob1" cx="30%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#c4b5fd" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="#a78bfa" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob2" cx="72%" cy="55%" r="38%">
+      <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.5"/>
+      <stop offset="65%" stop-color="#60a5fa" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob3" cx="50%" cy="75%" r="32%">
+      <stop offset="0%" stop-color="#f9a8d4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f9a8d4" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.04"/>
+      </feComponentTransfer>
+    </filter>
+    <style>
+      .blob { animation: floatBlob 16s ease-in-out infinite; }
+      .blob2 { animation: floatBlob 20s ease-in-out infinite reverse; }
+      .blob3 { animation: floatBlob 14s ease-in-out infinite; animation-delay: -4s; }
+      .particle { fill: #fff; opacity: 0.6; animation: twinkle 6s ease-in-out infinite; }
+      .line { fill: none; stroke: #c4b5fd; stroke-width: 1.2; opacity: 0.35; stroke-dasharray: 4 10; animation: drift 30s linear infinite; }
+      @keyframes floatBlob {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(20px, -15px) scale(1.04); }
+      }
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.25; }
+        50% { opacity: 0.85; }
+      }
+      @keyframes drift { to { stroke-dashoffset: -200; } }
+    </style>
+  </defs>
+  <rect width="1600" height="400" fill="url(#bg)"/>
+  <rect width="1600" height="400" filter="url(#softGrain)"/>
+  <ellipse class="blob" cx="480" cy="160" rx="280" ry="160" fill="url(#blob1)"/>
+  <ellipse class="blob2" cx="1120" cy="220" rx="320" ry="180" fill="url(#blob2)"/>
+  <ellipse class="blob3" cx="800" cy="300" rx="240" ry="100" fill="url(#blob3)"/>
+  <path class="line" d="M100 180 Q400 80 700 200 T1300 150"/>
+  <path class="line" d="M200 260 Q500 320 800 240 T1400 280" style="animation-duration: 40s; opacity: 0.25;"/>
+  <g>
+    <circle class="particle" cx="180" cy="90" r="2.5" style="animation-delay: 0s"/>
+    <circle class="particle" cx="320" cy="140" r="1.8" style="animation-delay: 1.2s"/>
+    <circle class="particle" cx="560" cy="70" r="2.2" style="animation-delay: 2s"/>
+    <circle class="particle" cx="740" cy="120" r="1.6" style="animation-delay: 0.5s"/>
+    <circle class="particle" cx="980" cy="85" r="2.4" style="animation-delay: 1.8s"/>
+    <circle class="particle" cx="1220" cy="110" r="1.9" style="animation-delay: 0.8s"/>
+    <circle class="particle" cx="1380" cy="70" r="2.1" style="animation-delay: 2.5s"/>
+    <circle class="particle" cx="250" cy="280" r="1.7" style="animation-delay: 1.5s"/>
+    <circle class="particle" cx="680" cy="300" r="2" style="animation-delay: 0.3s"/>
+    <circle class="particle" cx="1080" cy="270" r="1.8" style="animation-delay: 2.2s"/>
+  </g>
+  <text x="80" y="355" fill="#6b7280" font-family="system-ui, -apple-system, sans-serif" font-size="14" letter-spacing="3.5" opacity="0.65">2026 · AI COMPETITION</text>
+</svg>
